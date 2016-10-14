@@ -1,12 +1,15 @@
-SELECT [DepartmentID], [Salary]
-INTO [EmployeesSalaries]
-FROM [Employees]
-WHERE [Salary] > 30000 AND [ManagerID] <> 42
+SELECT * 
+INTO NewTable
+FROM Employees AS e
+WHERE e.Salary > 30000
 
-UPDATE [EmployeesSalaries]
-SET [Salary] = [Salary] + 5000
-WHERE [DepartmentID] = 1
+DELETE FROM NewTable 
+WHERE ManagerID = 42
 
-SELECT [DepartmentID], AVG([Salary]) AS 'AverageSalary'
-FROM [EmployeesSalaries]
-GROUP BY [DepartmentID]
+UPDATE NewTable
+SET Salary = Salary + 5000
+WHERE DepartmentID = 1
+
+SELECT n.DepartmentID, AVG(n.Salary) AS 'AverageSalary'
+FROM NewTable AS n
+GROUP BY n.DepartmentID
