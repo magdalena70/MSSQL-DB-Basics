@@ -1,9 +1,10 @@
-SELECT x.Game, x.GameType AS 'Game Type', x.Username, x.Cash, ch.Name
+SELECT x.Game, x.GameType AS 'Game Type', x.Username, x.[Level], x.Cash, ch.Name AS 'Character'
 FROM(
 	SELECT 
 		g.Name AS 'Game', 
 		gt.Name AS 'GameType', 
-		u.Username, ug.Level, 
+		u.Username, 
+		ug.[Level], 
 		ug.Cash, 
 		ug.CharacterId
 	FROM Users AS u
@@ -16,4 +17,4 @@ FROM(
 ) AS x
 INNER JOIN Characters AS ch
 	ON x.CharacterId = ch.Id
-ORDER BY x.Level DESC, x.Username ASC, x.Game ASC
+ORDER BY x.[Level] DESC, x.Username ASC, x.Game ASC
