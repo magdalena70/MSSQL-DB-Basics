@@ -15,3 +15,5 @@ BEGIN TRAN
 		COMMIT
 	END
 END
+
+EXEC dbo.usp_TakeLoan @CustomerID = 1, @LoanAmount = 500, @Interest = 1, @StartDate='20160915'
