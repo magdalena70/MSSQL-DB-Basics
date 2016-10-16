@@ -3,7 +3,7 @@ AS
 BEGIN
 	DECLARE @customerIdUnexpiredLoans INT;
 	SET @customerIdUnexpiredLoans = (
-		SELECT c.CustomerID--, c.FirstName, l.LoanID 
+		SELECT c.CustomerID
 		FROM Loans AS l
 		INNER JOIN Customers AS c
 		ON l.CustomerID = c.CustomerID
@@ -22,11 +22,6 @@ BEGIN
 	END
 	ELSE
 	BEGIN
-		SELECT c.CustomerID
-		FROM Loans AS l
-		INNER JOIN Customers AS c
-		ON l.CustomerID = c.CustomerID
-		WHERE (l.ExpirationDate > GETDATE() OR l.ExpirationDate IS NULL)
-		AND (c.CustomerID = @CustomerID)
+		PRINT ''
 	END
 END
