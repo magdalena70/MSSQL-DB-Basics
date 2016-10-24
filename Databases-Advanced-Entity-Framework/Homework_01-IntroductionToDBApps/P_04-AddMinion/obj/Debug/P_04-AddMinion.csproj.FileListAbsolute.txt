@@ -1,0 +1,6 @@
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_04-AddMinion\bin\Debug\P_04-AddMinion.exe.config
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_04-AddMinion\bin\Debug\P_04-AddMinion.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_04-AddMinion\bin\Debug\P_04-AddMinion.pdb
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_04-AddMinion\obj\Debug\P_04-AddMinion.csprojResolveAssemblyReference.cache
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_04-AddMinion\obj\Debug\P_04-AddMinion.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_04-AddMinion\obj\Debug\P_04-AddMinion.pdb

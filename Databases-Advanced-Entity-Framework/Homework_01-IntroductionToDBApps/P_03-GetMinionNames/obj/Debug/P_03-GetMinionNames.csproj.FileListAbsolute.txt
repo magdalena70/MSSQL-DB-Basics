@@ -1,0 +1,6 @@
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_03-GetMinionNames\bin\Debug\P_03-GetMinionNames.exe.config
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_03-GetMinionNames\bin\Debug\P_03-GetMinionNames.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_03-GetMinionNames\bin\Debug\P_03-GetMinionNames.pdb
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_03-GetMinionNames\obj\Debug\P_03-GetMinionNames.csprojResolveAssemblyReference.cache
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_03-GetMinionNames\obj\Debug\P_03-GetMinionNames.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_03-GetMinionNames\obj\Debug\P_03-GetMinionNames.pdb

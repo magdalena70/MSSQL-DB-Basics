@@ -1,0 +1,6 @@
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\bin\Debug\P_07-PrintAllMinionNames.exe.config
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\bin\Debug\P_07-PrintAllMinionNames.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\bin\Debug\P_07-PrintAllMinionNames.pdb
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\obj\Debug\P_07-PrintAllMinionNames.csprojResolveAssemblyReference.cache
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\obj\Debug\P_07-PrintAllMinionNames.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\obj\Debug\P_07-PrintAllMinionNames.pdb

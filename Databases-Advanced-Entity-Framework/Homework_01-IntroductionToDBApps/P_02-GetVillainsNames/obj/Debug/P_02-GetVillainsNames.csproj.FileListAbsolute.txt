@@ -1,0 +1,9 @@
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_02-GetVillainsNames\bin\Debug\P_02-GetVillainsNames.exe.config
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_02-GetVillainsNames\bin\Debug\P_02-GetVillainsNames.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_02-GetVillainsNames\bin\Debug\P_02-GetVillainsNames.pdb
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_02-GetVillainsNames\obj\Debug\P_02-GetVillainsNames.csprojResolveAssemblyReference.cache
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_02-GetVillainsNames\obj\Debug\P_02-GetVillainsNames.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_02-GetVillainsNames\obj\Debug\P_02-GetVillainsNames.pdb
+C:\Users\acer\Documents\GitHub\MSSQL-DB-Basics\Databases-Advanced-Entity-Framework\Homework_01-IntroductionToDBApps\P_02-GetVillainsNames\bin\Debug\P_02-GetVillainsNames.exe.config
+C:\Users\acer\Documents\GitHub\MSSQL-DB-Basics\Databases-Advanced-Entity-Framework\Homework_01-IntroductionToDBApps\P_02-GetVillainsNames\obj\Debug\P_02-GetVillainsNames.exe
+C:\Users\acer\Documents\GitHub\MSSQL-DB-Basics\Databases-Advanced-Entity-Framework\Homework_01-IntroductionToDBApps\P_02-GetVillainsNames\obj\Debug\P_02-GetVillainsNames.pdb

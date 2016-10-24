@@ -1,0 +1,6 @@
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_05-ChangeTownNamesCasing\bin\Debug\P_05-ChangeTownNamesCasing.exe.config
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_05-ChangeTownNamesCasing\bin\Debug\P_05-ChangeTownNamesCasing.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_05-ChangeTownNamesCasing\bin\Debug\P_05-ChangeTownNamesCasing.pdb
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_05-ChangeTownNamesCasing\obj\Debug\P_05-ChangeTownNamesCasing.csprojResolveAssemblyReference.cache
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_05-ChangeTownNamesCasing\obj\Debug\P_05-ChangeTownNamesCasing.exe
+C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_05-ChangeTownNamesCasing\obj\Debug\P_05-ChangeTownNamesCasing.pdb
