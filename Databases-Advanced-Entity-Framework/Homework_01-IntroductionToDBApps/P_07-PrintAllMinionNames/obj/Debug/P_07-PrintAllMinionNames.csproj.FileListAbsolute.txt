@@ -4,3 +4,6 @@ C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\bin\De
 C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\obj\Debug\P_07-PrintAllMinionNames.csprojResolveAssemblyReference.cache
 C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\obj\Debug\P_07-PrintAllMinionNames.exe
 C:\Users\acer\Desktop\testVS\ConsoleApplication1\P_07-PrintAllMinionNames\obj\Debug\P_07-PrintAllMinionNames.pdb
+C:\Users\acer\Documents\GitHub\MSSQL-DB-Basics\Databases-Advanced-Entity-Framework\Homework_01-IntroductionToDBApps\P_07-PrintAllMinionNames\bin\Debug\P_07-PrintAllMinionNames.exe.config
+C:\Users\acer\Documents\GitHub\MSSQL-DB-Basics\Databases-Advanced-Entity-Framework\Homework_01-IntroductionToDBApps\P_07-PrintAllMinionNames\obj\Debug\P_07-PrintAllMinionNames.exe
+C:\Users\acer\Documents\GitHub\MSSQL-DB-Basics\Databases-Advanced-Entity-Framework\Homework_01-IntroductionToDBApps\P_07-PrintAllMinionNames\obj\Debug\P_07-PrintAllMinionNames.pdb

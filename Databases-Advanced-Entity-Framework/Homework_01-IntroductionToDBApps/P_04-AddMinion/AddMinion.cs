@@ -16,8 +16,8 @@ namespace P_04_AddMinion
                 return;
             }
 
-            string minionName = minionDataArr[0];
-            string minionAge = minionDataArr[1];
+            string minionName = minionDataArr[0].Trim();
+            string minionAge = minionDataArr[1].Trim();
             int minionAgeParsed;
             if (!Int32.TryParse(minionAge, out minionAgeParsed))
             {
@@ -42,17 +42,16 @@ namespace P_04_AddMinion
 
             string connectionStr = "Server=.\\SQLEXPRESS; Database=Minions; Integrated Security=True;";
             SqlConnection connection = new SqlConnection(connectionStr);
-
             connection.Open();
-            string useDataBase = "USE Minions ";
-            SqlCommand command = new SqlCommand(useDataBase, connection);
+            
             using (connection)
             {
                 //check if Town Exists
                 string selectExistingTown = "SELECT TownName " +
                                        "FROM Towns " +
-                                       "WHERE TownName = '" + minionTown + "' ";
-                command.CommandText = selectExistingTown;
+                                       "WHERE TownName = @minionTown ";
+                SqlCommand command = new SqlCommand(selectExistingTown, connection);
+                command.Parameters.AddWithValue("@minionTown", minionTown);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -70,7 +69,7 @@ namespace P_04_AddMinion
                 {
                     connection.Open();
                     string insertTown = "INSERT INTO Towns(TownName, Country) " +
-                                "VALUES('" + minionTown + "', 'NoCountryName') ";
+                                "VALUES(@minionTown, 'NoCountryName') ";
                     command.CommandText = insertTown;
                     if (command.ExecuteNonQuery() == 1)
                     {
@@ -83,7 +82,7 @@ namespace P_04_AddMinion
                 connection.Open();
                 string selectMinionTownID = "SELECT TownID " +
                                         "FROM Towns " +
-                                        "WHERE TownName = '" + minionTown + "' ";
+                                        "WHERE TownName = @minionTown ";
                 int existingTownID;
                 command.CommandText = selectMinionTownID;
                 existingTownID = (int)command.ExecuteScalar();
@@ -94,9 +93,12 @@ namespace P_04_AddMinion
                 connection.Open();
                 string selectExistingMinion = "SELECT MinionName " +
                         "FROM Minions " +
-                        "WHERE MinionName = '" + minionName + "' " +
-                        "AND Age = " + minionAge + "AND TownID = ";
-                command.CommandText = selectExistingMinion + existingTownID;
+                        "WHERE MinionName = @minionName " +
+                        "AND Age = @minionAge AND TownID = @existingTownID";
+                command.CommandText = selectExistingMinion;
+                command.Parameters.AddWithValue("@minionName", minionName);
+                command.Parameters.AddWithValue("@minionAge", minionAge);
+                command.Parameters.AddWithValue("@existingTownID", existingTownID);
                 reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -114,7 +116,7 @@ namespace P_04_AddMinion
                 {
                     connection.Open();
                     string insertMinion = "INSERT INTO Minions(MinionName, Age, TownID) " +
-                                    "VALUES('" + minionName + "', " + minionAge + ", " + existingTownID + ") ";
+                                    "VALUES(@minionName, @minionAge, @existingTownID) ";
                     command.CommandText = insertMinion;
                     if (command.ExecuteNonQuery() == 1)
                     {
@@ -127,8 +129,8 @@ namespace P_04_AddMinion
                 connection.Open();
                 string selectMinionID = "SELECT MinionID " +
                                 "FROM Minions " +
-                                "WHERE MinionName = '" + minionName + "' " +
-                                "AND Age = " + minionAge + " AND TownID = " + existingTownID;
+                                "WHERE MinionName = @minionName " +
+                                "AND Age = @minionAge AND TownID = @existingTownID ";
                 int existingMinionID;
                 command.CommandText = selectMinionID;
                 existingMinionID = (int)command.ExecuteScalar();
@@ -139,8 +141,9 @@ namespace P_04_AddMinion
                 connection.Open();
                 string selectExistingVillain = "SELECT VillainName " +
                         "FROM Villains " +
-                        "WHERE VillainName = '" + villainName + "' ";
+                        "WHERE VillainName = @villainName ";
                 command.CommandText = selectExistingVillain;
+                command.Parameters.AddWithValue("@villainName", villainName);
                 reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -158,7 +161,7 @@ namespace P_04_AddMinion
                 {
                     connection.Open();
                     string insertVillain = "INSERT INTO Villains(VillainName, EvilnessFactorID) " +
-                                    "VALUES('" + villainName + "',  3) ";
+                                    "VALUES(@villainName,  3) ";
                     command.CommandText = insertVillain;
                     if (command.ExecuteNonQuery() == 1)
                     {
@@ -171,7 +174,7 @@ namespace P_04_AddMinion
                 connection.Open();
                 string selectVillainID = "SELECT VillainID " +
                                 "FROM Villains " +
-                                "WHERE VillainName = '" + villainName + "' ";
+                                "WHERE VillainName = @villainName ";
                 int existingVillainID;
                 command.CommandText = selectVillainID;
                 existingVillainID = (int)command.ExecuteScalar();
@@ -181,9 +184,11 @@ namespace P_04_AddMinion
                 //check if MinionsVillains Exists
                 connection.Open();
                 string selectMinionsVillains = "SELECT * FROM MinionsVillains " +
-                                            "WHERE MinionID = " + existingMinionID +
-                                            "AND VillainID = " + existingVillainID;
+                                            "WHERE MinionID = @existingMinionID " +
+                                            "AND VillainID = @existingVillainID ";
                 command.CommandText = selectMinionsVillains;
+                command.Parameters.AddWithValue("@existingMinionID", existingMinionID);
+                command.Parameters.AddWithValue("@existingVillainID", existingVillainID);
                 reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -203,7 +208,7 @@ namespace P_04_AddMinion
                 {
                     connection.Open();
                     string insertMinionsVillains = "INSERT INTO MinionsVillains(MinionID, VillainID) " +
-                                                    "VALUES(" + existingMinionID + ", " + existingVillainID + ") ";
+                                                    "VALUES(@existingMinionID, @existingVillainID) ";
                     command.CommandText = insertMinionsVillains;
                     if (command.ExecuteNonQuery() == 1)
                     {

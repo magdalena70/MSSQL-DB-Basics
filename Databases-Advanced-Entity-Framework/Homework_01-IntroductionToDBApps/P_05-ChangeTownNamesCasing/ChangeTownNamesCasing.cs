@@ -23,9 +23,9 @@ namespace P_05_ChangeTownNamesCasing
                 //update towns in current Country
                 string updateTableTowns = "UPDATE Towns " +
                                         "SET TownName = UPPER(TownName) " +
-                                        "WHERE Country = '" + countryName + "' ";
+                                        "WHERE Country = @countryName ";
                 SqlCommand command = new SqlCommand(updateTableTowns, connection);
-
+                command.Parameters.AddWithValue("@countryName", countryName);
                 int countUpdatedTowns = command.ExecuteNonQuery();
                 if (countUpdatedTowns > 0)
                 {
@@ -41,7 +41,7 @@ namespace P_05_ChangeTownNamesCasing
                 //select updated towns
                 connection.Open();
                 string selectTownsInCountry = "SELECT TownName FROM Towns " +
-                                                "WHERE Country = '" + countryName + "' ";
+                                                "WHERE Country = @countryName ";
                 command.CommandText = selectTownsInCountry;
                 SqlDataReader reader = command.ExecuteReader();
 

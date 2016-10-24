@@ -22,11 +22,12 @@ namespace P_03_GetMinionNames
                                             "ON m.MinionID = mv.MinionID " +
                                             "RIGHT JOIN Villains AS v " +
                                             "ON v.VillainID = mv.VillainID " +
-                                            "WHERE v.VillainID =  " + villainIDParsed;
+                                            "WHERE v.VillainID =  @villainIDParsed ";
 
                 using (connection)
                 {
                     SqlCommand command = new SqlCommand(selectMinionNames, connection);
+                    command.Parameters.AddWithValue("@villainIDParsed", villainIDParsed);
                     SqlDataReader reader = command.ExecuteReader();
 
                     if (reader.Read())
