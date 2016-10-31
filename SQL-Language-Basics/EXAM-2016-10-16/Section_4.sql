@@ -12,18 +12,18 @@ BEGIN
 
 	BEGIN TRAN
 	IF(
-		@CustomerID IN(SELECT CustomerID FROM Customers) 
-		AND @airlineID IS NOT NULL
+		@CustomerID NOT IN(SELECT CustomerID FROM Customers) 
+		OR @airlineID IS NULL OR @reviewID IS NULL
 	)
+	BEGIN
+		RAISERROR('Airline does not exist.', 16, 1)
+		ROLLBACK
+	END
+	ELSE
 	BEGIN
 		INSERT INTO CustomerReviews(ReviewID, CustomerID, ReviewContent, ReviewGrade, AirlineID)
 		VALUES (@reviewID, @CustomerID, @ReviewContent, @ReviewGrade, @airlineID)
 		COMMIT
-	END
-	ELSE
-	BEGIN
-		RAISERROR('Airline does not exist.', 16, 1)
-		ROLLBACK
 	END
 END
 

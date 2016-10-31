@@ -50,7 +50,7 @@ ORDER BY t.TicketID ASC
 --to do
 
 --TASK 7
-SELECT 
+SELECT DISTINCT
 	c.CustomerID, 
 	CONCAT(c.FirstName, ' ', c.LastName) AS 'FullName',
 	DATEDIFF(YEAR, c.DateOfBirth, GETDATE()) AS 'Age'
