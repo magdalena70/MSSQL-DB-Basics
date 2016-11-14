@@ -9,6 +9,11 @@ namespace BookShopSystemDB.Models
         Normal, Promo, Gold
     }
 
+    public enum AgeRestrictions
+    {
+        Minor, Teen, Adult
+    }
+
     public class Book
     {
         private ICollection<Category> categories;
@@ -37,6 +42,8 @@ namespace BookShopSystemDB.Models
         public int Copies { get; set; }
 
         public DateTime? ReleaseDate { get; set; }
+
+        public AgeRestrictions AgeRestriction { get; set; }
 
         public Author Author { get; set; }
 
