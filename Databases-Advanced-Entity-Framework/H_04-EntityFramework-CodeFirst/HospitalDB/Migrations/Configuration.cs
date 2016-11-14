@@ -30,12 +30,12 @@ namespace HospitalDB.Migrations
                         LastName = patientLastNames[i],
                         Address = "some address...",
                         Email = emails[i],
-                        DateOfBirth = new DateTime(years[i], random.Next(12), random.Next(22)),
+                        DateOfBirth = new DateTime(years[i], random.Next(12), random.Next(28)),
                         HasMedicalInsurance = true
                     });
                 }
             
-            Patient[] patients = context.Patients.Local.ToArray();
+                Patient[] patients = context.Patients.Local.ToArray();
 
                 string[] medicamentName = { "Phlebodia 600", "Vitamin C", "Magnesium 375", "Vitamin B-Complex Depo" };
                 string[] diagnoseNames = { "Masdfgh lkjh", "QWER", "Qasd-Qfghj", "lkj-RT" };
@@ -49,26 +49,26 @@ namespace HospitalDB.Migrations
                         Patient = patients[i]
                     });
 
-                context.Diagnoses.AddOrUpdate(d => d.Name, new Diagnose()
-                {
-                    Name = diagnoseNames[i],
-                    Comments = "some comments...",
-                    Patient = patients[i]
-                });
+                    context.Diagnoses.AddOrUpdate(d => d.Name, new Diagnose()
+                    {
+                        Name = diagnoseNames[i],
+                        Comments = "some comments...",
+                        Patient = patients[i]
+                    });
 
-                context.Doctors.AddOrUpdate(d => d.Name, new Doctor()
+                    context.Doctors.AddOrUpdate(d => d.Name, new Doctor()
                     {
                         Name = doctorNames[i],
                         Specialty = "some specialty"
                     });
                 }
            
-            Doctor[] doctors = context.Doctors.Local.ToArray();
+                Doctor[] doctors = context.Doctors.Local.ToArray();
                 for (int i = 0; i < doctors.Length; i++)
                 {
                     context.Visitations.AddOrUpdate(new Visitation()
                     {
-                        Date = new DateTime(2016, 9, 10 + i),
+                        Date = DateTime.Now.AddDays(i),
                         Patient = patients[i],
                         Doctor = doctors[i],
                         Comments = "some comments about..."
