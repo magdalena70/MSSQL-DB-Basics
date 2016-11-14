@@ -30,18 +30,18 @@ namespace HospitalDB.Migrations
                         LastName = patientLastNames[i],
                         Address = "some address...",
                         Email = emails[i],
-                        DateOfBirth = new DateTime(years[i], random.Next(12), random.Next(28)),
+                        DateOfBirth = new DateTime(years[i], random.Next(12), random.Next(22)),
                         HasMedicalInsurance = true
                     });
                 }
-
-                Patient[] patients = context.Patients.Local.ToArray();
+            
+            Patient[] patients = context.Patients.Local.ToArray();
 
                 string[] medicamentName = { "Phlebodia 600", "Vitamin C", "Magnesium 375", "Vitamin B-Complex Depo" };
                 string[] diagnoseNames = { "Masdfgh lkjh", "QWER", "Qasd-Qfghj", "lkj-RT" };
                 string[] doctorNames = { "Nevena Mindareva", "Nikola Georgiev", "Todor Hristov", "Iana Popova" };
 
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < patients.Length; i++)
                 {
                     context.Medicaments.AddOrUpdate(m => m.Name, new Medicament()
                     {
@@ -62,13 +62,13 @@ namespace HospitalDB.Migrations
                         Specialty = "some specialty"
                     });
                 }
-
-                Doctor[] doctors = context.Doctors.Local.ToArray();
-                for (int i = 0; i < 4; i++)
+           
+            Doctor[] doctors = context.Doctors.Local.ToArray();
+                for (int i = 0; i < doctors.Length; i++)
                 {
                     context.Visitations.AddOrUpdate(new Visitation()
                     {
-                        Date = DateTime.Now,
+                        Date = new DateTime(2016, 9, 10 + i),
                         Patient = patients[i],
                         Doctor = doctors[i],
                         Comments = "some comments about..."
