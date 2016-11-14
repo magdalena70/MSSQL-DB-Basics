@@ -1,1 +1,0 @@
-C:\Users\acer\Documents\GitHub\MSSQL-DB-Basics\Databases-Advanced-Entity-Framework\Homework_01-IntroductionToDBApps\P_03-GetMinionNames\bin\Debug\P_03-GetMinionNames.exe.config
