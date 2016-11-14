@@ -14,6 +14,7 @@ namespace HospitalDB
             foreach (var patient in collection)
             {
                 Console.WriteLine($"Patient: {patient.FirstName} {patient.LastName}, date of birth: {patient.DateOfBirth}");
+
                 Visitation[] visitations = patient.Visitations.ToArray();
                 foreach (var visitation in visitations)
                 {
@@ -26,6 +27,7 @@ namespace HospitalDB
                 {
                     Console.WriteLine($"\tDiagnose: {diagnose.Name}");
                 }
+
                 Medicament[] medicaments = patient.Medicaments.ToArray();
                 foreach (var medicament in medicaments)
                 {
