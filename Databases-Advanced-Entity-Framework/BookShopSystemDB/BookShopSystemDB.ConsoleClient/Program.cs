@@ -29,6 +29,34 @@ namespace BookShopSystemDB.ConsoleClient
             //GetAllBooksFromAuthor(context, "George", "Powell");
             //GetTop3MostRecentBooksByCategories(context);
             #endregion
+
+            #region//Step 7 - Related Books
+
+            //insert RelatedBooks
+            //var books = context.Books
+            //    .Take(3)
+            //    .ToList();
+            //books[0].RelatedBooks.Add(books[1]);
+            //books[1].RelatedBooks.Add(books[0]);
+            //books[0].RelatedBooks.Add(books[2]);
+            //books[2].RelatedBooks.Add(books[0]);
+
+            //context.SaveChanges();
+
+            // Query the first three books to get their names
+            // and their related book names
+            //var booksFromQuery = context.Books
+            //    .Take(3)
+            //    .ToList();
+            //foreach (var book in booksFromQuery)
+            //{
+            //    Console.WriteLine("--{0}", book.Title);
+            //    foreach (var relatedBook in book.RelatedBooks)
+            //    {
+            //        Console.WriteLine(relatedBook.Title);
+            //    }
+            //}
+            #endregion
         }
 
         private static void GetAllBooksFromAuthor(BookShopContext context, string authorFirstName, string authorLastName)
