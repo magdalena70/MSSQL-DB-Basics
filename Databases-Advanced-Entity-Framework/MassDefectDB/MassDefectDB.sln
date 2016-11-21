@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.Models", "MassDefect.Models\MassDefect.Models.csproj", "{9ECDBD18-2F07-4C11-A922-3A80C6F584A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.Data", "MassDefect.Data\MassDefect.Data.csproj", "{E13D8E5E-82F3-4569-BC37-A5C7FFC92DE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.ConsoleClient", "MassDefect.ConsoleClient\MassDefect.ConsoleClient.csproj", "{1CEC502D-C633-4FF9-8A05-17F465045099}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasets", "datasets", "{3E23B55C-73AB-436D-805E-5A937E2190C8}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Desktop\resources\datasets\anomalies.json = ..\..\..\..\..\Desktop\resources\datasets\anomalies.json
+		..\..\..\..\..\Desktop\resources\datasets\anomaly-victims.json = ..\..\..\..\..\Desktop\resources\datasets\anomaly-victims.json
+		..\..\..\..\..\Desktop\resources\datasets\new-anomalies.xml = ..\..\..\..\..\Desktop\resources\datasets\new-anomalies.xml
+		..\..\..\..\..\Desktop\resources\datasets\persons.json = ..\..\..\..\..\Desktop\resources\datasets\persons.json
+		..\..\..\..\..\Desktop\resources\datasets\planets.json = ..\..\..\..\..\Desktop\resources\datasets\planets.json
+		..\..\..\..\..\Desktop\resources\datasets\solar-systems.json = ..\..\..\..\..\Desktop\resources\datasets\solar-systems.json
+		..\..\..\..\..\Desktop\resources\datasets\stars.json = ..\..\..\..\..\Desktop\resources\datasets\stars.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.DataExport", "MassDefect.DataExport\MassDefect.DataExport.csproj", "{FD3B924F-6CFB-4414-89F1-9CD8F28181EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9ECDBD18-2F07-4C11-A922-3A80C6F584A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ECDBD18-2F07-4C11-A922-3A80C6F584A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ECDBD18-2F07-4C11-A922-3A80C6F584A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ECDBD18-2F07-4C11-A922-3A80C6F584A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E13D8E5E-82F3-4569-BC37-A5C7FFC92DE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E13D8E5E-82F3-4569-BC37-A5C7FFC92DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E13D8E5E-82F3-4569-BC37-A5C7FFC92DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E13D8E5E-82F3-4569-BC37-A5C7FFC92DE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CEC502D-C633-4FF9-8A05-17F465045099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CEC502D-C633-4FF9-8A05-17F465045099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CEC502D-C633-4FF9-8A05-17F465045099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CEC502D-C633-4FF9-8A05-17F465045099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD3B924F-6CFB-4414-89F1-9CD8F28181EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3B924F-6CFB-4414-89F1-9CD8F28181EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3B924F-6CFB-4414-89F1-9CD8F28181EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3B924F-6CFB-4414-89F1-9CD8F28181EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
