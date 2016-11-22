@@ -36,7 +36,7 @@ namespace BookShopSystemDB.Models
         public string Description { get; set; }
 
         [Required]
-        public EditionTypes EditionType { get; set; }
+        public virtual EditionTypes EditionType { get; set; }
 
         [Required]
         public decimal Price { get; set; }
@@ -46,9 +46,9 @@ namespace BookShopSystemDB.Models
 
         public DateTime? ReleaseDate { get; set; }
 
-        public AgeRestrictions AgeRestriction { get; set; }
+        public virtual AgeRestrictions AgeRestriction { get; set; }
 
-        public Author Author { get; set; }
+        public virtual Author Author { get; set; }
 
         public virtual ICollection<Category> Categories
         {

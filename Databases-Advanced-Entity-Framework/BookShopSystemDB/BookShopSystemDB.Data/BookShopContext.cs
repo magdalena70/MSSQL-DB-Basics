@@ -19,7 +19,8 @@ namespace BookShopSystemDB.Data
             modelBuilder.Entity<Book>()
                 .HasMany(b => b.RelatedBooks)
                 .WithMany()
-                .Map(m => {
+                .Map(m => 
+                {
                     m.MapLeftKey("BookId");
                     m.MapRightKey("RelatedBookId");
                     m.ToTable("BooksRelatedBooks");

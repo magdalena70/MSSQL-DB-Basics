@@ -52,10 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookShopContext.cs" />
-    <Compile Include="Migrations\201611171510362_AddRelatedBooksToBooks.cs" />
-    <Compile Include="Migrations\201611171510362_AddRelatedBooksToBooks.Designer.cs">
-      <DependentUpon>201611171510362_AddRelatedBooksToBooks.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,11 +69,6 @@
     <Content Include="resources\authors.txt" />
     <Content Include="resources\books.txt" />
     <Content Include="resources\categories.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611171510362_AddRelatedBooksToBooks.resx">
-      <DependentUpon>201611171510362_AddRelatedBooksToBooks.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
