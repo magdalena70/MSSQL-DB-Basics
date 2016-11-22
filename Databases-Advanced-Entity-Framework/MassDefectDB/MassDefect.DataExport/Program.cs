@@ -3,6 +3,8 @@ using System.Linq;
 using MassDefect.Data;
 using Newtonsoft.Json;
 using System.IO;
+using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace MassDefect.DataExport
 {
@@ -12,10 +14,51 @@ namespace MassDefect.DataExport
         {
             var context = new MassDefectContext();
 
-            ExportPlanetsWichAreNotAnomalyOrigins(context);
-            ExportPeopleWichHaveNotBeenVictims(context);
-            ExportTopAnomaly(context);
+            //export to json
+            //ExportPlanetsWichAreNotAnomalyOrigins(context);
+            //ExportPeopleWichHaveNotBeenVictims(context);
+            //ExportTopAnomaly(context);
+
+            //export to xml
+            //ExportAnomaliesAndThePeopleAffectedByThemToXml(context);
         }
+
+        private static void ExportAnomaliesAndThePeopleAffectedByThemToXml(MassDefectContext context)
+        {
+            var anomalies = context.Anomalies
+                .Select(a => new
+                {
+                    id = a.Id,
+                    originPlanetName = a.OriginPlanet.Name,
+                    teleportPlanetName = a.TeleportPlanet.Name,
+                    victims = a.Victims.Select(v => v.Name).ToList()
+                })
+                .OrderBy(a => a.id);
+
+            var xmlDocument = new XElement("anomalies");
+            foreach (var anomaly in anomalies)
+            {
+                var anomalyNode = new XElement("anomaly");
+                anomalyNode.Add(new XAttribute("id", anomaly.id));
+                anomalyNode.Add(new XAttribute("origin-planet", anomaly.originPlanetName));
+                anomalyNode.Add(new XAttribute("teleport-planet", anomaly.teleportPlanetName));
+                var victimsNode = new XElement("victims");
+
+                foreach (var victim in anomaly.victims)
+                {
+                    var victimNode = new XElement("victim");
+                    victimNode.Add(new XAttribute("name", victim));
+                    victimsNode.Add(victimNode);
+                }
+
+                anomalyNode.Add(victimsNode);
+                xmlDocument.Add(anomalyNode);
+                xmlDocument.Save("../../exportedXml/anomalies.xml");
+            }
+
+            //Console.WriteLine(xmlDocument);
+        }
+
 
         private static void ExportPlanetsWichAreNotAnomalyOrigins(MassDefectContext context)
         {
