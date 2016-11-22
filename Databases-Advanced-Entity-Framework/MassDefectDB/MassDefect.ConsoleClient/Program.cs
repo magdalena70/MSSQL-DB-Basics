@@ -26,26 +26,73 @@ namespace MassDefect.ConsoleClient
             //ImportAnomalies();
             //ImportAnomalyVictims();
 
-            //ImportXml(); // to do
+            //ImportXml();
         }
 
         private static void ImportXml()
         {
-            const string NEW_ANOMALIES_PATH = "../../../datasets/new-anomalies.xml";
-            var xml = XDocument.Load(NEW_ANOMALIES_PATH);
-            var anomalies = xml.XPathSelectElement("anomalies/anomaly");
-            var context = new MassDefectContext();
-
-            foreach (var anomaly in anomalies)//to do
+            try
             {
-                InportAnomalyAndVictims(anomaly, context);
+                const string NEW_ANOMALIES_PATH = "../../../datasets/new-anomalies.xml";
+                var xml = XDocument.Load(NEW_ANOMALIES_PATH);
+                var anomalies = xml.XPathSelectElements("anomalies/anomaly");
+                var context = new MassDefectContext();
+
+                foreach (var anomaly in anomalies)
+                {
+                    InportAnomalyAndVictims(anomaly, context);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: Invalid data.");
+                //throw new Exception(ex.Message);
             }
         }
+
 
         private static void InportAnomalyAndVictims(XElement anomalyNode, MassDefectContext context)
         {
             var originPlanetName = anomalyNode.Attribute("origin-planet");
             var teleportPlanetName = anomalyNode.Attribute("teleport-planet");
+
+            if (originPlanetName != null && teleportPlanetName != null)
+            {
+                var anomalyEntity = new Anomalie()
+                {
+                    OriginPlanet = GetPlanetByName(originPlanetName.Value, context),
+                    TeleportPlanet = GetPlanetByName(teleportPlanetName.Value, context)
+                };
+
+                var victims = anomalyNode.XPathSelectElements("victims/victim");
+                foreach (var victim in victims)
+                {
+                    ImportVictim(victim, context, anomalyEntity);
+                }
+
+                context.Anomalies.Add(anomalyEntity);
+                context.SaveChanges();
+                Console.WriteLine("Successfully imported anomaly.");
+                
+            }
+            else
+            {
+                Console.WriteLine("Error: Invalid data.");
+            }
+        }
+
+        private static void ImportVictim(XElement victim, MassDefectContext context, Anomalie anomalyEntity)
+        {
+            var victimName = victim.Attribute("name").Value;
+            var anomalyEntityVictim = context.Persons.FirstOrDefault(p => p.Name == victimName);
+            
+            anomalyEntity.Victims.Add(anomalyEntityVictim);
+        }
+
+        private static Planet GetPlanetByName(string name, MassDefectContext context)
+        {
+            var planet = context.Planets.FirstOrDefault(p => p.Name == name);
+            return planet != null ? planet : new Planet() { Name = name };        
         }
 
         private static void InportSolarSystems()
