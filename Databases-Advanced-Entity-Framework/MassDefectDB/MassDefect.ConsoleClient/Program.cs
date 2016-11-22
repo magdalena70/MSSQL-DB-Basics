@@ -16,9 +16,6 @@ namespace MassDefect.ConsoleClient
     {
         static void Main()
         {
-            //var context = new MassDefectContext();
-            //context.Database.Initialize(true);
-
             //InportSolarSystems();
             //ImportStars();
             //ImportPlanets();

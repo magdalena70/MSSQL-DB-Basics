@@ -1,9 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using MassDefect.Data;
 using Newtonsoft.Json;
 using System.IO;
-using System.Collections.Generic;
 using System.Xml.Linq;
 
 namespace MassDefect.DataExport
@@ -15,12 +13,12 @@ namespace MassDefect.DataExport
             var context = new MassDefectContext();
 
             //export to json
-            //ExportPlanetsWichAreNotAnomalyOrigins(context);
-            //ExportPeopleWichHaveNotBeenVictims(context);
-            //ExportTopAnomaly(context);
+            ExportPlanetsWichAreNotAnomalyOrigins(context);
+            ExportPeopleWichHaveNotBeenVictims(context);
+            ExportTopAnomaly(context);
 
             //export to xml
-            //ExportAnomaliesAndThePeopleAffectedByThemToXml(context);
+            ExportAnomaliesAndThePeopleAffectedByThemToXml(context);
         }
 
         private static void ExportAnomaliesAndThePeopleAffectedByThemToXml(MassDefectContext context)
