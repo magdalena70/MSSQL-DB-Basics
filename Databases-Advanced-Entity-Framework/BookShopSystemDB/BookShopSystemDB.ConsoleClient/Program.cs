@@ -1,5 +1,6 @@
 ﻿using BookShopSystemDB.Data;
 using BookShopSystemDB.Models;
+using EntityFramework.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -58,20 +59,28 @@ namespace BookShopSystemDB.ConsoleClient
             //}
             #endregion
 
-            #region//Advanced Querying from Homework_06
+            #region//Homework_06 - Advanced Querying
 
             //SelectBooksTitlesByAgeRestriction(context);
             //SelectGoldenBooks(context);
             //SelectBooksByPrice(context);
             //SelectNotReleasedBooks(context);
             //SelectBookTitlesByCategory(context);
+            //SelectBookTitlesByCategory_Variant2(context);
             //SelectBooksReleasedBeforeDate(context);
             //AuthorsSearch(context);
-            BooksSearch(context);
+            //BooksSearch(context);
+            //BookTitlesSearch(context);
+            //CountBooks(context);
+            //SelectTotalBookCopiesByAuthor(context);
+            //FindTotalProfitOfAllBooksByCategory(context);
+            //SelectMostRecentBooks(context, 35); // try with 2
+            //IncreaseBookCopies(context);
+            //RemoveBooks(context);
             #endregion
         }
 
-        //Homework_06
+        #region//Homework_06
         private static void SelectBooksTitlesByAgeRestriction(BookShopContext context)
         {
             string ageRestrictionsStr = Console.ReadLine().Trim().ToLower();
@@ -178,6 +187,18 @@ namespace BookShopSystemDB.ConsoleClient
                 }
             }
         }
+        private static void SelectBookTitlesByCategory_Variant2(BookShopContext context)
+        {
+            var givenCategories = Console.ReadLine().Split(' ').ToList();
+            var books = context.Books
+                .Where(b => b.Categories.Count(c => givenCategories.Contains(c.Name)) != 0)
+                .Select(b => b.Title);
+
+            foreach (var bookTitle in books)
+            {
+                Console.WriteLine(bookTitle);
+            }
+        }
 
         private static void SelectBooksReleasedBeforeDate(BookShopContext context)
         {
@@ -247,8 +268,130 @@ namespace BookShopSystemDB.ConsoleClient
             }
         }
 
+        private static void BookTitlesSearch(BookShopContext context)
+        {
+            string givenString = Console.ReadLine().Trim();
+            var books = context.Books
+                .Where(b => b.Author.LastName.StartsWith(givenString))
+                .Select(b => new { Title = b.Title, Author = b.Author.FirstName + " " + b.Author.LastName});
 
-        //Homework_05 Step 6
+            foreach (var book in books)
+            {
+                Console.WriteLine($"{book.Title} ({book.Author})");
+            }
+        }
+
+        private static void CountBooks(BookShopContext context)
+        {
+            string givenNumberStr = Console.ReadLine();
+            int givenNumber;
+            if (Int32.TryParse(givenNumberStr, out givenNumber))
+            {
+                var books = context.Books
+                    .Where(b => b.Title.Length > givenNumber)
+                    .Select(b => b.Title);
+                Console.WriteLine(books.Count());
+                Console.WriteLine($"There are {books.Count()} books with longer title than {givenNumber} symbols");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input!");
+            }
+        }
+
+        private static void SelectTotalBookCopiesByAuthor(BookShopContext context)
+        {
+            var booksByAuthor = context.Books
+                .GroupBy(b => b.Author)
+                .OrderByDescending(b => b.Sum(book => book.Copies));
+
+            foreach (var books in booksByAuthor)
+            {
+                Console.WriteLine($"{books.Key.FirstName} {books.Key.LastName} - {books.Sum(b => b.Copies)}");
+            }
+        }
+
+        private static void FindTotalProfitOfAllBooksByCategory(BookShopContext context)
+        {
+            var categoryInfo = context.Categories
+                .GroupBy(c => new
+                {
+                    CategoryName = c.Name, 
+                    Profit = c.Books.Sum(b => b.Copies * b.Price)
+                })
+                .OrderByDescending(c => c.Key.Profit)
+                .ThenBy(c => c.Key.CategoryName);
+
+            foreach (var category in categoryInfo)
+            {
+                Console.WriteLine($"{category.Key.CategoryName} - ${category.Key.Profit}");
+            }
+        }
+
+        private static void SelectMostRecentBooks(BookShopContext context, int booksCount)
+        {
+            var categories = context.Categories
+                .Where(c => c.Books.Count > booksCount)
+                .Select(c => new
+                {
+                    CategotyName = c.Name,
+                    BooksCount = c.Books.Count,
+                    Books = c.Books
+                        .OrderByDescending(b => b.ReleaseDate)
+                        .ThenBy(b => b.Title)
+                        .Select(b => new { b.Title, b.ReleaseDate })
+                        .Take(3)
+                })
+                .ToList();
+
+            foreach (var category in categories)
+            {
+                Console.WriteLine($"--{category.CategotyName}: {category.BooksCount} books");
+               
+                foreach (var book in category.Books)
+                {
+                    Console.WriteLine($"{book.Title} ({book.ReleaseDate.Value.Year})");
+                }
+            }
+        }
+
+        private static void IncreaseBookCopies(BookShopContext context)
+        {
+            string givenDateStr = Console.ReadLine();
+            DateTime givenDate = DateTime.Parse(givenDateStr);
+            int numberOfBookCopiesToIncrease = int.Parse(Console.ReadLine());
+
+            var booksReleasedAfterGivenDate = context.Books
+                .Where(b => b.ReleaseDate > givenDate);
+
+            int booksCount = booksReleasedAfterGivenDate.Count();
+            int totalAmount = booksReleasedAfterGivenDate.Count() * numberOfBookCopiesToIncrease;
+            Console.WriteLine($"{totalAmount}");
+
+            //using EntityFramework.Extended
+            context.Books.Update(booksReleasedAfterGivenDate, 
+                b => new Book() { Copies = b.Copies + numberOfBookCopiesToIncrease });
+            context.SaveChanges();
+
+            Console.WriteLine($"{booksCount} books are released after {givenDateStr} so total of {totalAmount} book copies were added");
+        }
+
+        private static void RemoveBooks(BookShopContext context)
+        {
+            int givenNumberOfCopies = int.Parse(Console.ReadLine());
+
+            var books = context.Books
+                .Where(b => b.Copies < givenNumberOfCopies);
+
+            //using EntityFramework.Extended
+            context.Books.Delete(books);
+            context.SaveChanges();
+
+            Console.WriteLine($"{books.Count()} books were deleted");
+        }
+        #endregion
+
+        #region//Homework_05 Step 6
         private static void GetAllBooksFromAuthor(BookShopContext context, string authorFirstName, string authorLastName)
         {
             var books = context.Books
@@ -331,5 +474,6 @@ namespace BookShopSystemDB.ConsoleClient
                 }
             }
         }
+        #endregion
     }
 }
