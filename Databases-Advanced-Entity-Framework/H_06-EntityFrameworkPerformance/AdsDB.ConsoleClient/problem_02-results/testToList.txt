@@ -1,0 +1,8 @@
+00:00:00.1734707 Non-Optimized
+00:00:00.0261866 Optimized
+00:00:00.1476394 Non-Optimized
+00:00:00.0254272 Optimized
+00:00:00.1695187 Non-Optimized
+00:00:00.0232315 Optimized
+00:00:00.1601394 Non-Optimized
+00:00:00.0246863 Optimized
