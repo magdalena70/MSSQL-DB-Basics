@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsShopDB.Models", "ProductsShopDB.Models\ProductsShopDB.Models.csproj", "{78D1E9DD-AF5D-4EF2-AF6C-9371DEE2B933}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsShopDB.Data", "ProductsShopDB.Data\ProductsShopDB.Data.csproj", "{D2924554-AEE1-463C-A182-A8B20322BE62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsShopDB.ConsoleClient", "ProductsShopDB.ConsoleClient\ProductsShopDB.ConsoleClient.csproj", "{3C25DE70-6879-4EAC-8FEF-2A06E755F1E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasets", "datasets", "{11252FEE-FE3D-4E25-AB84-2C347FA94419}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\cars.json = ..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\cars.json
+		..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\categories.json = ..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\categories.json
+		..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\customers.json = ..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\customers.json
+		..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\parts.json = ..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\parts.json
+		..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\products.json = ..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\products.json
+		..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\suppliers.json = ..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\suppliers.json
+		..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\users.json = ..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\users.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78D1E9DD-AF5D-4EF2-AF6C-9371DEE2B933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D1E9DD-AF5D-4EF2-AF6C-9371DEE2B933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D1E9DD-AF5D-4EF2-AF6C-9371DEE2B933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D1E9DD-AF5D-4EF2-AF6C-9371DEE2B933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2924554-AEE1-463C-A182-A8B20322BE62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2924554-AEE1-463C-A182-A8B20322BE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2924554-AEE1-463C-A182-A8B20322BE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2924554-AEE1-463C-A182-A8B20322BE62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C25DE70-6879-4EAC-8FEF-2A06E755F1E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C25DE70-6879-4EAC-8FEF-2A06E755F1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C25DE70-6879-4EAC-8FEF-2A06E755F1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C25DE70-6879-4EAC-8FEF-2A06E755F1E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
