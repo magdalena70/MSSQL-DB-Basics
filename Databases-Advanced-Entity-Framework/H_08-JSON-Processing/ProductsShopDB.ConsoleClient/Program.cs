@@ -177,7 +177,6 @@ namespace ProductsShopDB.ConsoleClient
             var usersAndProducts = context.Users
                 .Include("SoldProducts")
                 .Where(u => u.SoldProducts.Count() > 0)
-                //.OrderByDescending(u => u.SoldProducts.Count())
                 .Select(u => new
                 {
                     firstName = u.FirstName,
