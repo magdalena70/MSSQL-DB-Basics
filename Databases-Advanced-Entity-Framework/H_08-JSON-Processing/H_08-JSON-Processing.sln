@@ -20,6 +20,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasets", "datasets", "{11
 		..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\users.json = ..\..\..\..\..\Desktop\08\08. DB-Advanced-EntityFramework-JSON-Processing-Exercises\users.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealerDB.Models", "CarDealerDB.Models\CarDealerDB.Models.csproj", "{A9F394D9-87CF-4418-AD5A-8F55F31E6158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealerDB.Data", "CarDealerDB.Data\CarDealerDB.Data.csproj", "{FF1FA4E0-04E3-4E14-9509-5842E736066A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealerDB.ConsoleClient", "CarDealerDB.ConsoleClient\CarDealerDB.ConsoleClient.csproj", "{E24E4946-F4D1-4577-8B90-0E7D3C9326B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +44,18 @@ Global
 		{3C25DE70-6879-4EAC-8FEF-2A06E755F1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C25DE70-6879-4EAC-8FEF-2A06E755F1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C25DE70-6879-4EAC-8FEF-2A06E755F1E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F394D9-87CF-4418-AD5A-8F55F31E6158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F394D9-87CF-4418-AD5A-8F55F31E6158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F394D9-87CF-4418-AD5A-8F55F31E6158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F394D9-87CF-4418-AD5A-8F55F31E6158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF1FA4E0-04E3-4E14-9509-5842E736066A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF1FA4E0-04E3-4E14-9509-5842E736066A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF1FA4E0-04E3-4E14-9509-5842E736066A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF1FA4E0-04E3-4E14-9509-5842E736066A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E24E4946-F4D1-4577-8B90-0E7D3C9326B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E24E4946-F4D1-4577-8B90-0E7D3C9326B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E24E4946-F4D1-4577-8B90-0E7D3C9326B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E24E4946-F4D1-4577-8B90-0E7D3C9326B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

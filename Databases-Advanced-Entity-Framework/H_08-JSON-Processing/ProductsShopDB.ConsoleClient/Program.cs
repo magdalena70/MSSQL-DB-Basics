@@ -25,7 +25,7 @@ namespace ProductsShopDB.ConsoleClient
             //SelectProductsInRange(context);
             //SelectSuccessfullySoldProducts(context); 
             //SelectCategoriesByProductsCount(context);
-            SelectUsersAndProducts(context);
+            //SelectUsersAndProducts(context);
             #endregion
         }
 
