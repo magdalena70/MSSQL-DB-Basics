@@ -65,6 +65,7 @@
     <None Include="exportedJson\carsWithParts.json" />
     <None Include="exportedJson\localSuppliers.json" />
     <None Include="exportedJson\orderedCustomers.json" />
+    <None Include="exportedJson\salesWithAppliedDiscount.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
