@@ -31,6 +31,7 @@ namespace CarDealerDB.ConsoleClient
             //TotalSalesByCustomer(context);
             //SalesWithAppliedDiscount(context);
             #endregion
+
         }
 
         #region//Import Data
