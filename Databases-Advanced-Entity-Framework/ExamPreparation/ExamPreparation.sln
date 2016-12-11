@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefectDB.Models", "MassDefectDB.Models\MassDefectDB.Models.csproj", "{1C4D350D-E553-48A7-B7A1-DB5849510E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefectDB.Data", "MassDefectDB.Data\MassDefectDB.Data.csproj", "{11442839-74FF-4583-9A7D-007B4408F5C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefectDB.ImportJson", "MassDefectDB.ImportData\MassDefectDB.ImportJson.csproj", "{93F257EB-B24C-42CF-BE41-A4A8E5BB4DBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasets", "datasets", "{CD377344-8A8B-4F78-8340-34C58AD485D8}"
+	ProjectSection(SolutionItems) = preProject
+		datasets\anomalies.json = datasets\anomalies.json
+		datasets\anomaly-victims.json = datasets\anomaly-victims.json
+		datasets\new-anomalies.xml = datasets\new-anomalies.xml
+		datasets\persons.json = datasets\persons.json
+		datasets\planets.json = datasets\planets.json
+		datasets\solar-systems.json = datasets\solar-systems.json
+		datasets\stars.json = datasets\stars.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefectDB.Dtos", "MassDefectDB.Dtos\MassDefectDB.Dtos.csproj", "{2E9FB24A-1E28-4B52-B737-E5ED904BF07E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefectDB.ImportXml", "MassDefectDB.ImportXml\MassDefectDB.ImportXml.csproj", "{BA61ED1B-15BB-4123-8B9D-C8933D7ECC78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefect.ExportJson", "MassDefect.ExportJson\MassDefect.ExportJson.csproj", "{D73D3F2E-8884-4E0B-A5CF-30CB96C1EDDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exportedJson", "exportedJson", "{35E73E4C-EE20-4507-B655-12F702F849BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassDefectDB.ExportXml", "MassDefectDB.ExportXml\MassDefectDB.ExportXml.csproj", "{EE4CE1D4-B78D-41DB-8E26-52D74590B247}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exportedXml", "exportedXml", "{D62F3F76-F8D3-4F25-B5B2-6E28AFE626B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C4D350D-E553-48A7-B7A1-DB5849510E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C4D350D-E553-48A7-B7A1-DB5849510E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C4D350D-E553-48A7-B7A1-DB5849510E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C4D350D-E553-48A7-B7A1-DB5849510E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11442839-74FF-4583-9A7D-007B4408F5C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11442839-74FF-4583-9A7D-007B4408F5C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11442839-74FF-4583-9A7D-007B4408F5C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11442839-74FF-4583-9A7D-007B4408F5C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93F257EB-B24C-42CF-BE41-A4A8E5BB4DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F257EB-B24C-42CF-BE41-A4A8E5BB4DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F257EB-B24C-42CF-BE41-A4A8E5BB4DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F257EB-B24C-42CF-BE41-A4A8E5BB4DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E9FB24A-1E28-4B52-B737-E5ED904BF07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E9FB24A-1E28-4B52-B737-E5ED904BF07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E9FB24A-1E28-4B52-B737-E5ED904BF07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E9FB24A-1E28-4B52-B737-E5ED904BF07E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA61ED1B-15BB-4123-8B9D-C8933D7ECC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA61ED1B-15BB-4123-8B9D-C8933D7ECC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA61ED1B-15BB-4123-8B9D-C8933D7ECC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA61ED1B-15BB-4123-8B9D-C8933D7ECC78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73D3F2E-8884-4E0B-A5CF-30CB96C1EDDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73D3F2E-8884-4E0B-A5CF-30CB96C1EDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73D3F2E-8884-4E0B-A5CF-30CB96C1EDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73D3F2E-8884-4E0B-A5CF-30CB96C1EDDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE4CE1D4-B78D-41DB-8E26-52D74590B247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE4CE1D4-B78D-41DB-8E26-52D74590B247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE4CE1D4-B78D-41DB-8E26-52D74590B247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE4CE1D4-B78D-41DB-8E26-52D74590B247}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
