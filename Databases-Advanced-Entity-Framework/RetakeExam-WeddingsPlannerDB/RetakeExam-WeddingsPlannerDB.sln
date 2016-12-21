@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingsPlanner.Models", "WeddingsPlanner.Models\WeddingsPlanner.Models.csproj", "{591C0E68-BFFA-482C-9A78-D978AA075C99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingsPlanner.Data", "WeddingsPlanner.Data\WeddingsPlanner.Data.csproj", "{52B3F393-A804-4F78-91D9-6ED6287C347B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingsPlanner.ImportJson", "WeddingsPlanner.InportJson\WeddingsPlanner.ImportJson.csproj", "{E2FF8B43-A664-491C-AFA8-8CE2371E7FA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasets", "datasets", "{31597ADE-E48A-4C0F-A16A-ECB81A3589BC}"
+	ProjectSection(SolutionItems) = preProject
+		datasets\agencies.json = datasets\agencies.json
+		datasets\people.json = datasets\people.json
+		datasets\presents.xml = datasets\presents.xml
+		datasets\venues.xml = datasets\venues.xml
+		datasets\weddings.json = datasets\weddings.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportXml", "ImportXml\ImportXml.csproj", "{5BDD59B5-DC27-4F7E-B1F8-7976755B475F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportingData", "ExportingData\ExportingData.csproj", "{59168572-D969-4B0A-98DA-6725148FF2CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exportedData", "exportedData", "{23869530-A4BC-4CD8-9C17-CA4330D59BBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{591C0E68-BFFA-482C-9A78-D978AA075C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591C0E68-BFFA-482C-9A78-D978AA075C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591C0E68-BFFA-482C-9A78-D978AA075C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591C0E68-BFFA-482C-9A78-D978AA075C99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B3F393-A804-4F78-91D9-6ED6287C347B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B3F393-A804-4F78-91D9-6ED6287C347B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B3F393-A804-4F78-91D9-6ED6287C347B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B3F393-A804-4F78-91D9-6ED6287C347B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2FF8B43-A664-491C-AFA8-8CE2371E7FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FF8B43-A664-491C-AFA8-8CE2371E7FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FF8B43-A664-491C-AFA8-8CE2371E7FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2FF8B43-A664-491C-AFA8-8CE2371E7FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BDD59B5-DC27-4F7E-B1F8-7976755B475F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BDD59B5-DC27-4F7E-B1F8-7976755B475F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BDD59B5-DC27-4F7E-B1F8-7976755B475F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BDD59B5-DC27-4F7E-B1F8-7976755B475F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59168572-D969-4B0A-98DA-6725148FF2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59168572-D969-4B0A-98DA-6725148FF2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59168572-D969-4B0A-98DA-6725148FF2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59168572-D969-4B0A-98DA-6725148FF2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
